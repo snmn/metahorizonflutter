@@ -1,5 +1,6 @@
 
 import 'package:flutter/material.dart';
+import 'package:loginpage/secondPage.dart';
 
 class MyHomePage extends StatefulWidget{
   const MyHomePage({super.key});
@@ -75,14 +76,24 @@ class HomeState extends State<MyHomePage>{
                     Row(
                       mainAxisAlignment: MainAxisAlignment.center,
                       children: [
-                        Container(
-                          height: 50,
-                          width: 120,
-                          decoration: BoxDecoration(
-                              color: Colors.orange,
-                              borderRadius: BorderRadius.circular(20)
+                        GestureDetector(
+                          onTap: (){
+              Navigator.of(context).push(
+              MaterialPageRoute(
+              builder: (context) =>  SecondPage(),
+              ),
+              );
+
+              },
+                          child: Container(
+                            height: 50,
+                            width: 120,
+                            decoration: BoxDecoration(
+                                color: Colors.orange,
+                                borderRadius: BorderRadius.circular(20)
+                            ),
+                            child: const Center(child: Text("Signin",style: TextStyle(fontSize: 13,color: Colors.white), )),
                           ),
-                          child: const Center(child: Text("Signin",style: TextStyle(fontSize: 13,color: Colors.white), )),
                         ),
                       ],
                     )
