@@ -44,15 +44,37 @@ class SecondPageState extends State<SecondPage> {
                     ],
                   ),
                 ),
+                SizedBox(height:15,),   // give the size of box
+
+                Row(
+                  //green color first row created
+                  children: [
+                    Icon(Icons.check_box_outline_blank, color: Colors.black,  size:20,),  // icons and size and color
+                    Text("OrderNotes",
+                      style: TextStyle(color: Colors.black, fontSize: 15, fontWeight: FontWeight.bold ),),
+                    SizedBox(width: 140), // give the space between teo text
+                    Icon(Icons.check_box_outline_blank, color: Colors.black, size: 20,),  // Icos add
+                    Text("3:45PM",
+                      style: TextStyle(color: Colors.black,fontSize: 15, fontWeight: FontWeight.bold),),
+                    Text("  Sep12,2023", style: TextStyle(color:Colors.grey ,fontSize: 14, fontWeight: FontWeight.bold),),
+                  ],
+
+                ),
+
                 Row(
                   children: [
-                    Icon(Icons.note_alt, color: Colors.black,  size:30,),
-                    Text("OrderNotes",
-                      style: TextStyle(color: Colors.black, fontSize: 22, fontWeight: FontWeight.bold ),
+                    Text("Spicy and more spicy chicken with extra olive oil are added with garlic and vinegar",
+                    style: TextStyle(color: Colors.black,fontSize: 15),
+                    overflow: TextOverflow.ellipsis,
+                    maxLines: 2,
                     ),
-                    Text("")
                   ],
                 ),
+                Row(
+                  children: [
+                    // Text("Accpted",style: TextStyle(color: Colors.black, fontSize: 15, fontWeight: FontWeight.bold),)
+                  ],
+                )
               ],
             ),
 
@@ -62,3 +84,4 @@ class SecondPageState extends State<SecondPage> {
     );
   }
 }
+
