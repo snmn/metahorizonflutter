@@ -49,6 +49,7 @@ class SecondPageState extends State<SecondPage> {
                 Row(
                   //green color first row created
                   children: [
+                    Padding(padding: EdgeInsets.fromLTRB(0, 0, 10, 0),),
                     Icon(Icons.check_box_outline_blank, color: Colors.black,  size:20,),  // icons and size and color
                     Text("OrderNotes",
                       style: TextStyle(color: Colors.black, fontSize: 15, fontWeight: FontWeight.bold ),),
@@ -63,16 +64,21 @@ class SecondPageState extends State<SecondPage> {
 
                 Row(
                   children: [
-                    Text("Spicy and more spicy chicken with extra olive oil are added with garlic and vinegar",
-                    style: TextStyle(color: Colors.black,fontSize: 15),
-                    overflow: TextOverflow.ellipsis,
-                    maxLines: 2,
-                    ),
+                    Padding(padding: EdgeInsets.only(left:10, right: 30),),
+                    Flexible(
+                      child: Text("Spicy and more spicy chicken with extra olive oil are added with garlic and vinegar",
+                      style: TextStyle(color: Colors.black,fontSize: 15),
+                      overflow: TextOverflow.ellipsis,
+                      maxLines: 2,
+                    ),)
                   ],
                 ),
                 Row(
                   children: [
-                    // Text("Accpted",style: TextStyle(color: Colors.black, fontSize: 15, fontWeight: FontWeight.bold),)
+                    Icon(Icons.check_box_outline_blank, color: Colors.black, size: 20,),  // Icos add
+                    Text("No of items:",
+                      style: TextStyle(color: Colors.black,fontSize: 15, fontWeight: FontWeight.bold),),
+                    Text(" 6 ", style: TextStyle(color:Colors.grey ,fontSize: 14, fontWeight: FontWeight.bold),),
                   ],
                 )
               ],
