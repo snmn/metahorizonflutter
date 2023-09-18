@@ -1,92 +1,159 @@
-import 'package:flutter/cupertino.dart';
+
 import 'package:flutter/material.dart';
 
 class SecondPage extends StatefulWidget{
+
   @override
-  State<StatefulWidget> createState() {
-   return secondpageState();
+  State<StatefulWidget> createState(){
+    return secondpageState();
   }
+
 }
+
 class secondpageState extends State<SecondPage>{
-  @override
-  Widget build(BuildContext context) {
+
+  showContainer(BuildContext context, int orderid){
     var size = MediaQuery.of(context).size;
-    return Scaffold(
-      backgroundColor: Colors.grey,
-      appBar: AppBar(backgroundColor: Colors.black),
-      body: Column(
-        crossAxisAlignment: CrossAxisAlignment.start,
+    return Container(
+      //  height: size.height/4,
+      width: size.width/1.1,
+      padding: const EdgeInsets.only(bottom: 0.0),
+      decoration: BoxDecoration(
+        color: Colors.white,
+        borderRadius: BorderRadius.circular(20),
+      ),
+      child: Column(
         children: [
-          const SizedBox(height: 20,),
-          const Padding(
-            padding: EdgeInsets.only(left:15.0),
-            child: Text("All Orders",style: TextStyle(color: Colors.black,fontSize: 20,fontWeight: FontWeight.bold),),
+          Container(
+            width: size.width/1.1,
+            height: 50,
+            padding: const EdgeInsets.only(left: 18, right: 20),
+            decoration: BoxDecoration(
+              color: Colors.green,
+              borderRadius: BorderRadius.circular(20),
+            ),
+            child:  Row(
+              mainAxisAlignment: MainAxisAlignment.spaceBetween,
+              children:  [
+                Text("Order Id :$orderid" , style: const TextStyle(fontSize: 20, fontWeight: FontWeight.bold, color: Colors.black),),
+                const Text("Accepted", style: TextStyle(fontSize: 20, fontWeight: FontWeight.bold, color: Colors.black),),
+              ],
+            ),
           ),
-          const SizedBox(height: 20,),
-
-          Row(
-            mainAxisAlignment: MainAxisAlignment.center,
-            children: [
-              Container(
-                height: size.height/5,
-                width: size.width/1.1,
-                decoration: BoxDecoration(
-                  color: Colors.white,
-                  borderRadius: BorderRadius.circular(30)
-                ),
-                child: Column(
-                  children: [
-                    Container(
-
-                      width: size.width/1.1,
-                      height: 50,
-                      padding: const EdgeInsets.only(left: 18,right: 20),
-                      decoration: BoxDecoration(borderRadius: BorderRadius.circular(30),
-                        color: Colors.yellow
-
-                      ),
-                      child: Row(
-                        mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                        children: const [
-                         Text("Order Id: 2",style: TextStyle(color: Colors.black,fontSize: 14,fontWeight: FontWeight.bold),),
-                         Text("Accepted",style: TextStyle(color: Colors.black,fontSize: 14,fontWeight: FontWeight.bold),),
-                        ],
-                      ),
-                    ),
-                    SizedBox(height: 15,),
-                    Row(
-                      mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                      children: [
-                        Row(
-                          children: const [
-                            Icon(Icons.note_alt,color: Colors.black,size: 20,),
-                            Text("OrderNote",
-                              style: TextStyle(color: Colors.black,fontSize: 11,fontWeight: FontWeight.bold),)
-                          ],
-                        ),
-                        Row(
-                          children: const [
-                            Icon(Icons.punch_clock,color: Colors.black,size: 20,),
-                            Text("14:20 PM",
-                              style: TextStyle(color: Colors.black,fontSize: 11,fontWeight: FontWeight.bold),)
-                          ],
-                        ),
-                        Row(
-                          children: const [
-                            Text("Accepted",
-                              style: TextStyle(color: Colors.black,fontSize: 12,fontWeight: FontWeight.bold),)
-                          ],
-                        )
-                      ],
-                    )
+          const SizedBox(height: 15,),
+          Container(
+            width: size.width/1.2,
+            child: Row(
+              mainAxisAlignment: MainAxisAlignment.spaceBetween,
+              children: [
+                Row(
+                  children: const [
+                    Icon(Icons.check_box),
+                    Text("Order Note", style: TextStyle(color: Colors.black, fontWeight: FontWeight.bold),),
                   ],
                 ),
-              ),
-            ],
+                Row(
+                  children: const [
+                    Icon(Icons.check_box),
+                    Text("14:20 PM", style: TextStyle(color: Colors.black, fontWeight: FontWeight.bold),),
+                    Text("Apr 18, 2022")
+                  ],
+                )
+              ],
+            ),
           ),
+          const SizedBox(height: 15,),
+          Container(
+            width: size.width/1.2,
+            child: const Text("More spicy and crispy chickened with extra olive oil and garlic with a hint of vinegar."
+                ,style: TextStyle(overflow: TextOverflow.visible),maxLines: 3),
+          ),
+
+          const SizedBox(height: 15,),
+          Container(
+            padding: const EdgeInsets.only(left:15),
+            // width: size.width/1.2,
+            child: Row(
+              mainAxisAlignment: MainAxisAlignment.spaceBetween,
+              crossAxisAlignment: CrossAxisAlignment.start,
+              children: [
+
+                Column(
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                  children: [
+                    Row(
+                      children: const [
+                        Icon(Icons.check_box),
+                        Text("No. of items : 5", style: TextStyle(fontWeight: FontWeight.bold, color: Colors.black),),
+                      ],
+                    ),
+                    Row(
+                      children: const [
+                        Icon(Icons.check_box),
+                        Text("Created by : Random", style: TextStyle(fontWeight: FontWeight.bold),)
+                      ],
+                    ),
+                    //  const SizedBox(height: 8,)
+                  ],
+                ),
+                Container(
+                  width: size.width/3,
+                  decoration: const BoxDecoration(
+                      color: Colors.red,
+                      borderRadius: BorderRadius.only(
+                          topLeft: Radius.circular(20),
+                          bottomRight: Radius.circular(20)
+                      )
+                  ),
+                  child:  Column(
+                    crossAxisAlignment: CrossAxisAlignment.center,
+                    children: [
+                      Row(
+                        mainAxisAlignment: MainAxisAlignment.center,
+                        children: const [
+                          Icon(Icons.check_box,color: Colors.white,),
+                          Text(" Total", style: TextStyle(fontWeight: FontWeight.bold,color: Colors.white),)
+                        ],
+                      ),
+                      Row(
+                        mainAxisAlignment: MainAxisAlignment.center,
+                        children: const [
+                          Icon(Icons.currency_rupee_outlined,color: Colors.white,),
+                          Text(" 420.00", style: TextStyle(fontWeight: FontWeight.bold,color: Colors.white),)
+                        ],
+                      )
+                    ],
+                  ),
+                )
+              ],
+            ),
+          )
         ],
       ),
     );
   }
 
+  @override
+  Widget build(BuildContext context){
+    var size = MediaQuery.of(context).size;
+    return Scaffold(
+      backgroundColor: Colors.grey,
+      appBar: AppBar(backgroundColor: Colors.transparent,),
+      body: Column(
+        children: [
+           Padding(
+            padding: const EdgeInsets.all(30.0),
+            child: Row(
+              children: const [
+                Text("All Order", style: TextStyle(fontSize: 24, fontWeight: FontWeight.bold, color: Colors.black),),
+              ],
+            ),
+          ),
+           showContainer(context, 200),
+           SizedBox(height: 10,),
+           showContainer(context, 3)
+        ],
+      ),
+    );
+  }
 }
