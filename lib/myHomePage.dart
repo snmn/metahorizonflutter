@@ -1,6 +1,8 @@
 
 import 'package:flutter/material.dart';
 
+import 'SecondPage.dart';
+
 class MyHomePage extends StatefulWidget{
   const MyHomePage({super.key});
 
@@ -23,17 +25,17 @@ class HomeState extends State<MyHomePage>{
           child: Column(
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
-  Padding(padding: EdgeInsets.only(bottom: 20.0),child: Row(
-    mainAxisAlignment: MainAxisAlignment.center,
-    children: [
-      Icon(Icons.beach_access,size: size.width/7,color: const Color(
-          0xff550909),),
-      const Text("BILDR.",
-        style: TextStyle(color: Colors.black,fontSize: 26,
-            fontWeight: FontWeight.w900),)
-    ],
-  ),)
-      ,
+              Padding(padding: EdgeInsets.only(bottom: 20.0),child: Row(
+                mainAxisAlignment: MainAxisAlignment.center,
+                children: [
+                  Icon(Icons.beach_access,size: size.width/7,color: const Color(
+                      0xff550909),),
+                  const Text("BILDR.",
+                    style: TextStyle(color: Colors.black,fontSize: 26,
+                        fontWeight: FontWeight.w900),)
+                ],
+              ),)
+              ,
               Container(
                 height: size.height/2.5,
                 width: size.width/1.1,
@@ -50,12 +52,12 @@ class HomeState extends State<MyHomePage>{
                     Padding(
                       padding: const EdgeInsets.all(10.0),
                       child: Container(
-                          height: 50,
-                          width: size.width/1.2,
-                          decoration: BoxDecoration(
-                              color: Colors.white,
-                              borderRadius: BorderRadius.circular(20)
-                          ),
+                        height: 50,
+                        width: size.width/1.2,
+                        decoration: BoxDecoration(
+                            color: Colors.white,
+                            borderRadius: BorderRadius.circular(20)
+                        ),
                         child: Padding(
                           padding: const EdgeInsets.only(left: 15.0), // Adjust the value as needed
                           child: Align(
@@ -68,12 +70,12 @@ class HomeState extends State<MyHomePage>{
                     Padding(
                       padding: const EdgeInsets.all(10.0),
                       child: Container(
-                          height: 50,
-                          width: size.width/1.2,
-                          decoration: BoxDecoration(
-                              color: Colors.white,
-                              borderRadius: BorderRadius.circular(20)
-                          ),
+                        height: 50,
+                        width: size.width/1.2,
+                        decoration: BoxDecoration(
+                            color: Colors.white,
+                            borderRadius: BorderRadius.circular(20)
+                        ),
                         child: Padding(
                           padding: const EdgeInsets.only(left: 15.0), // Adjust the value as needed
                           child: Align(
@@ -86,14 +88,25 @@ class HomeState extends State<MyHomePage>{
                     Row(
                       mainAxisAlignment: MainAxisAlignment.center,
                       children: [
-                        Container(
-                          height: 50,
-                          width: 170,
-                          decoration: BoxDecoration(
-                              color: Colors.deepOrange,
-                              borderRadius: BorderRadius.circular(30)
+                        GestureDetector(
+                          onTap: (){
+                            Navigator.of(context).push(
+
+                              MaterialPageRoute(
+                                builder: (context) => SecondPage(),
+                              ),
+                            );
+                          },
+
+                          child: Container(
+                            height: 50,
+                            width: 170,
+                            decoration: BoxDecoration(
+                                color: Colors.deepOrange,
+                                borderRadius: BorderRadius.circular(30)
+                            ),
+                            child: const Center(child: Text("Sign In",style: TextStyle(fontSize: 17,color: Colors.white, fontWeight: FontWeight.w900), )),
                           ),
-                          child: const Center(child: Text("Sign In",style: TextStyle(fontSize: 17,color: Colors.white, fontWeight: FontWeight.w900), )),
                         ),
                       ],
                     ),
