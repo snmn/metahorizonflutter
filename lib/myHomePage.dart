@@ -21,17 +21,16 @@ class HomeState extends State<MyHomePage>{
         body: Container(
           height: size.height,
           width: size.width,
-          color: Colors.white,
+          color: Colors.black,
           child: Column(
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
               Padding(padding: EdgeInsets.only(bottom: 20.0),child: Row(
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: [
-                  Icon(Icons.beach_access,size: size.width/7,color: const Color(
-                      0xff550909),),
+                  Icon(Icons.beach_access,size: size.width/7,color: Colors.purpleAccent,),
                   const Text("BILDR.",
-                    style: TextStyle(color: Colors.black,fontSize: 26,
+                    style: TextStyle(color: Colors.white,fontSize: 26,
                         fontWeight: FontWeight.w900),)
                 ],
               ),)
@@ -40,7 +39,7 @@ class HomeState extends State<MyHomePage>{
                 height: size.height/2.5,
                 width: size.width/1.1,
                 decoration: BoxDecoration(
-                    color: Colors.orangeAccent,
+                    color: Colors.deepOrange,
                     borderRadius: BorderRadius.circular(30)
                 ),
                 child: Column(
@@ -102,7 +101,7 @@ class HomeState extends State<MyHomePage>{
                             height: 50,
                             width: 170,
                             decoration: BoxDecoration(
-                                color: Colors.deepOrange,
+                                color: Colors.deepPurple,
                                 borderRadius: BorderRadius.circular(30)
                             ),
                             child: const Center(child: Text("Sign In",style: TextStyle(fontSize: 17,color: Colors.white, fontWeight: FontWeight.w900), )),
